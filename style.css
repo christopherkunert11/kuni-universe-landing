@@ -1,0 +1,181 @@
+/* Schrift: Amatic SC, selbst gehostet (SIL OFL, Lizenz in fonts/) */
+@font-face {
+  font-family: "Amatic SC";
+  src: url("fonts/amatic-sc-latin.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Amatic SC";
+  src: url("fonts/amatic-sc-latin-ext.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Farben wie in der App: tiefes Blau, Neon-Blau */
+:root {
+  --bg: #04060f;
+  --ink: #eaf3ff;
+  --muted: #a9bddc;
+  --neon: #4da3ff;
+  --glass: rgba(20, 32, 64, 0.45);
+  --line: rgba(120, 180, 255, 0.28);
+  --glow: 0 0 1px #fff, 0 0 8px rgba(77, 163, 255, 0.85), 0 0 22px rgba(77, 163, 255, 0.45);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* durchsichtig, sonst verdeckt der Body den Sternenhimmel */
+  background: transparent;
+  color: var(--ink);
+  font-family: "Amatic SC", "Arial Narrow", sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 6px rgba(77, 163, 255, 0.35);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sternenhimmel nur aus Verläufen, kein Bild */
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 78% 12%, #cfe3ff, transparent),
+    radial-gradient(2px 2px at 42% 64%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 88% 72%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 22% 86%, #bcd6ff, transparent),
+    radial-gradient(2px 2px at 64% 36%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 5% 52%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 95% 40%, #dbe9ff, transparent),
+    radial-gradient(1.5px 1.5px at 52% 8%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 34% 40%, #a8c8ff, transparent),
+    radial-gradient(ellipse 70% 45% at 20% 25%, rgba(70, 60, 180, 0.28), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 80%, rgba(30, 110, 220, 0.22), transparent 70%),
+    radial-gradient(ellipse 120% 60% at 50% 115%, rgba(40, 120, 255, 0.35), transparent 60%),
+    var(--bg);
+  background-size: 340px 340px, 420px 420px, 380px 380px, 300px 300px, 460px 460px, 360px 360px, 280px 280px, 400px 400px, 320px 320px, 440px 440px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h1, h2 { font-weight: 400; margin: 0; text-shadow: var(--glow); }
+
+/* Hero */
+.hero {
+  min-height: min(92vh, 860px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 0 32px;
+}
+.mark {
+  width: 132px;
+  height: 132px;
+  filter: drop-shadow(0 0 18px rgba(255, 170, 60, 0.35));
+  animation: float 7s ease-in-out infinite;
+}
+h1 {
+  font-size: clamp(3.2rem, 15vw, 6.5rem);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  margin-top: 12px;
+}
+.tagline { color: var(--muted); margin: 6px 0 28px; letter-spacing: 0.3em; font-size: 1.2rem; }
+.claim { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1; margin: 0 0 16px; text-shadow: var(--glow); }
+.lead { max-width: 34em; color: var(--muted); margin: 0 0 32px; }
+
+.cta { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: center; }
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid var(--neon);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.7rem;
+  letter-spacing: 0.12em;
+  background: rgba(77, 163, 255, 0.12);
+  box-shadow: 0 0 16px rgba(77, 163, 255, 0.45), inset 0 0 12px rgba(77, 163, 255, 0.25);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn:hover, .btn:focus-visible {
+  background: rgba(77, 163, 255, 0.28);
+  box-shadow: 0 0 28px rgba(77, 163, 255, 0.75), inset 0 0 14px rgba(77, 163, 255, 0.35);
+}
+.link { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); letter-spacing: 0.12em; }
+.link:hover, .link:focus-visible { border-color: var(--neon); }
+a:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
+
+/* Drei Karten aus Glas */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 24px 0 72px;
+}
+.card {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  backdrop-filter: blur(6px);
+}
+.card h2 { font-size: 2rem; margin-bottom: 6px; }
+.card p { margin: 0; color: var(--muted); }
+
+.promise, .soon { text-align: center; margin: 0 0 72px; }
+.promise h2, .soon h2 { font-size: clamp(2rem, 7vw, 2.8rem); line-height: 1.15; margin-bottom: 10px; }
+.promise p, .soon p { color: var(--muted); margin: 0 0 24px; }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: center;
+  padding: 24px 16px 40px;
+  border-top: 1px solid var(--line);
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+footer a { color: var(--ink); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark { animation: none; }
+}
+
+/* Rechtstexte: gut lesbare Normalschrift statt Amatic */
+.legal {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 16px 56px;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-transform: none;
+  letter-spacing: 0;
+  text-shadow: none;
+}
+.legal h1 { font-family: "Amatic SC", sans-serif; font-size: 3rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.legal h2 { font-family: "Amatic SC", sans-serif; font-size: 2rem; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 32px; }
+.legal a { color: var(--neon); }
+.legal .back { font-family: "Amatic SC", sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink); text-decoration: none; }
+.legal .note { color: var(--muted); font-size: 0.9rem; }
