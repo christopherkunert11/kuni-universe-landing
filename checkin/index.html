@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EIN KÜNSTLER, EIN UNIVERSUM · KUNI UNIVERSE</title>
+  <meta name="description" content="One-Pager zum finalen Check-in des Vibe Coding Bootcamps: kuni universe, eine Musik-App ohne Tracking, gebaut mit Claude Code und KI-Agenten.">
+  <link rel="icon" type="image/png" href="../img/icon.png">
+  <style>
+    /* Schrift: Amatic SC, selbst gehostet (SIL OFL) */
+    @font-face { font-family: "Amatic SC"; src: url("../fonts/amatic-sc-latin.woff2") format("woff2"); font-display: swap; unicode-range: U+0000-00FF, U+2000-206F, U+20AC; }
+    @font-face { font-family: "Amatic SC"; src: url("../fonts/amatic-sc-latin-ext.woff2") format("woff2"); font-display: swap; unicode-range: U+0100-02AF, U+1E00-1E9F; }
+
+    :root {
+      --bg: #04060f;
+      --card: rgba(20, 32, 64, 0.55);
+      --ink: #eaf3ff;
+      --muted: #a9bddc;
+      --neon: #4da3ff;
+      --line: rgba(120, 180, 255, 0.28);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      background:
+        radial-gradient(ellipse 70% 45% at 15% 0%, rgba(70, 60, 180, 0.3), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(30, 110, 220, 0.25), transparent 70%),
+        var(--bg);
+      min-height: 100vh;
+    }
+    .page { max-width: 900px; margin: 0 auto; padding: 28px 16px 40px; }
+    .display { font-family: "Amatic SC", sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 400; }
+
+    header { display: flex; gap: 16px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+    header img { width: 64px; height: 64px; flex: none; }
+    .event { margin: 0; color: var(--muted); font-size: 13px; letter-spacing: 0.04em; }
+    h1 { margin: 2px 0 0; font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.05; text-shadow: 0 0 10px rgba(77, 163, 255, 0.55); }
+    .sub { margin: 4px 0 0; color: var(--muted); }
+
+    .grid { display: grid; grid-template-columns: 1fr 230px; gap: 22px; margin-top: 18px; }
+    h2 { margin: 0 0 4px; font-size: 1.7rem; color: var(--ink); }
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 12px; padding-left: 18px; }
+    li { margin-bottom: 3px; }
+    .shot { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); display: block; }
+    .caption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+    .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+    .speaker { display: flex; gap: 14px; align-items: flex-start; }
+    .speaker img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); flex: none; }
+    .speaker p { margin: 0; }
+    a { color: var(--neon); }
+    .links { list-style: none; padding: 0; margin: 0; }
+    .links li { margin-bottom: 6px; }
+    .links span { color: var(--muted); }
+
+    @media (max-width: 640px) {
+      .grid, .bottom { grid-template-columns: 1fr; }
+      .grid figure { max-width: 260px; margin: 0 auto; }
+    }
+
+    /* Druck: hell und auf eine A4-Seite */
+    @page { size: A4; margin: 12mm; }
+    @media print {
+      :root { --ink: #111; --muted: #444; --neon: #0b4fa8; --line: #c9d3e3; --card: #f4f7fc; }
+      html, body { background: #fff; }
+      body { font-size: 10.5pt; line-height: 1.4; min-height: 0; }
+      .page { max-width: none; padding: 0; }
+      h1 { text-shadow: none; font-size: 26pt; }
+      h2 { font-size: 17pt; }
+      .grid { grid-template-columns: 1fr 52mm; gap: 7mm; margin-top: 5mm; }
+      .bottom { grid-template-columns: 1fr 1fr; }
+      .grid figure { max-width: none; margin: 0; }
+      a { text-decoration: none; }
+      .box, figure { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <img src="../img/kuni-mark.svg" alt="kuni universe Logo" width="64" height="64">
+      <div>
+        <p class="event">Vibe Coding Bootcamp · Finaler Check-in 3/3 · Kohorte 2 · Di, 3. November 2026</p>
+        <h1 class="display">Ein Künstler, ein Universum</h1>
+        <p class="sub">Meine Musik-App ohne Tracking, gebaut mit Claude Code und einem Team aus KI-Agenten</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section>
+        <h2 class="display">Projekt: kuni universe</h2>
+        <p>kuni universe ist meine eigene Musik-App: ein Künstler, ein Universum statt einer Streaming-Plattform mit hundert Namen, die keiner behält. Fans kommen per QR-Code ohne Anmeldung hinein, hören bewusst, entdecken Geheimnisse, ohne Werbung und ohne Tracking.</p>
+        <p>Ich bin Musiker und programmiere nicht. Im Bootcamp habe ich die App komplett mit Claude Code gebaut: vom Moodboard zur Next.js-App mit 3D-Neon-Zimmer, einer Sternkarte als Player und Songtexten im Takt (Whisper, lokal). Heute arbeitet ein kleines KI-Team für mich: ein Agent für den kostenlosen Mikrokosmos, einer für das spätere Abo, ein Prüfer vor jedem Zusammenführen.</p>
+
+        <h2 class="display">Darum geht es im Talk</h2>
+        <ul>
+          <li>Wie sich mein Plan seit Check-in 2 verändert hat und was ich bewusst gestrichen habe</li>
+          <li>Welche Regeln die KI braucht, damit ich als Nicht-Programmierer die Kontrolle behalte</li>
+          <li>Agenten, Prüfer, Tests und Sicherheits-Checks im Alltag</li>
+          <li>Wie es nach dem Bootcamp weitergeht: Abo „Makrokosmos“ mit Spende an den Naturschutz, ein eigenes Spiel</li>
+        </ul>
+      </section>
+
+      <figure style="margin:0">
+        <img class="shot" src="app-start.png" alt="Startseite der App kuni universe: Augen-Planet im Weltall, darunter Latest Release und die vier Bereiche Audio, Visuals, Alive, Kosmos" width="780" height="1688">
+        <figcaption class="caption">Startseite der App (Arbeitsstand Oktober 2026)</figcaption>
+      </figure>
+    </div>
+
+    <div class="bottom">
+      <section class="box speaker">
+        <img src="../img/icon.png" alt="">
+        <div>
+          <h2 class="display">Sprecher</h2>
+          <p><strong>Christopher Kunert</strong> („kuni“), Musiker und Künstler aus Halle (Saale). Programmiert nicht und baut trotzdem: mit KI als Werkzeug und Team.</p>
+        </div>
+      </section>
+      <section class="box">
+        <h2 class="display">Links</h2>
+        <ul class="links">
+          <li><span>Live:</span> <a href="https://christopherkunert11.github.io/kuni-universe-landing/">christopherkunert11.github.io/kuni-universe-landing</a></li>
+          <li><span>Repo:</span> <a href="https://github.com/christopherkunert11/kuni-universe-landing">github.com/christopherkunert11/kuni-universe-landing</a></li>
+          <li><span>Musik:</span> <a href="https://www.youtube.com/@kuniuniverse">youtube.com/@kuniuniverse</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
