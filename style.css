@@ -153,6 +153,8 @@ footer {
   color: var(--muted);
 }
 footer a { color: var(--ink); }
+/* Rechte-Hinweis: eigene Zeile unter den Links */
+footer .rights { flex: 0 0 100%; margin: 4px 0 0; text-align: center; text-wrap: balance; font-size: 1.05rem; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
