@@ -150,6 +150,28 @@ a:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
 .card p { margin: 0; color: var(--muted); }
 
 .promise, .soon { text-align: center; margin: 0 0 72px; }
+/* „Get the app“: Knopf darüber, die zwei Anleitungen direkt darunter */
+.soon { margin-bottom: 28px; }
+
+/* Anleitung fürs Handy: zwei Glas-Karten mit nummerierten Schritten */
+.install { margin: 0 0 16px; }
+.install ol { margin: 0; padding-left: 1.4em; color: var(--muted); }
+.install li { margin: 4px 0; padding-left: 4px; }
+.install li::marker { color: var(--neon); }
+.glyph {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+  margin-left: 4px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(77, 163, 255, 0.8));
+}
+.glyph circle { fill: var(--ink); stroke: none; }
+.install-note { text-align: center; color: var(--muted); max-width: 34em; margin: 0 auto 72px; text-wrap: balance; }
 .promise h2, .soon h2 { font-size: clamp(2rem, 7vw, 2.8rem); line-height: 1.15; margin-bottom: 10px; }
 .promise p, .soon p { color: var(--muted); margin: 0 0 24px; }
 
