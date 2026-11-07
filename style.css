@@ -99,8 +99,9 @@ h1 {
 .claim { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1; margin: 0 0 16px; text-shadow: var(--glow); }
 .lead { max-width: 34em; color: var(--muted); margin: 0 0 32px; }
 
-/* Lichtsäule: großes Bild im Handyformat unter dem Hero */
-.showcase { max-width: 380px; margin: 0 auto 56px; padding: 0 8px; }
+/* Großes Bild unter dem Hero: seit 07.11.2026 das neue Auge-Ei auf dem Sternenhimmel im Querformat
+   (vorher die Lichtsäule im Handyformat, 380 px breit) */
+.showcase { max-width: 720px; margin: 0 auto 56px; padding: 0 8px; }
 .showcase img {
   display: block;
   width: 100%;
@@ -109,6 +110,21 @@ h1 {
   border: 1px solid rgba(90, 162, 255, 0.35);
   box-shadow: 0 0 40px rgba(122, 92, 255, 0.35), 0 0 90px rgba(255, 170, 60, 0.12);
 }
+
+/* Kuni selbst (seit 07.11.2026): sein Foto im selben Neon-Rahmen wie das große Bild, darunter Name und ein Satz */
+.artist { max-width: 300px; margin: 0 auto 56px; padding: 0 8px; text-align: center; }
+.artist img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  border: 1px solid rgba(90, 162, 255, 0.35);
+  box-shadow: 0 0 40px rgba(122, 92, 255, 0.35), 0 0 90px rgba(255, 170, 60, 0.12);
+}
+.artist figcaption { margin-top: 16px; }
+.artist h2 { font-size: 2.4rem; margin: 0 0 4px; }
+.artist p { margin: 0 0 6px; color: var(--muted); }
+.artist small { color: var(--muted); opacity: 0.7; letter-spacing: 0.08em; }
 
 .cta { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: center; }
 .btn {
